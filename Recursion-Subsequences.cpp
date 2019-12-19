@@ -36,9 +36,6 @@ typedef vector<ll> vl;
 #define gcd(a, b) __gcd(num1 , num2)
 
 
-
-
-
 std::vector<string> v;
 std::vector<string> :: iterator it;
 long long c = 0;
@@ -48,7 +45,7 @@ void Recursion_Subsequence(string str, string ans)
 		v.push_back(ans);
 		c++;
 		return;
-	}
+	} 
 	Recursion_Subsequence(str.substr(1), ans);
 	Recursion_Subsequence(str.substr(1), ans+str[0]);
 }
