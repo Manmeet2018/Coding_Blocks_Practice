@@ -39,7 +39,7 @@ typedef vector<ll> vl;
 
 // test case
 // input -> xxabcxxdxx
-// output-> abcdxxxxxx
+// outlput-> abcdxxxxxx
 string moveAllXToEnd(string str)
 {
 	if(!str[0])

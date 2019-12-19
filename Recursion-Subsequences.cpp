@@ -36,25 +36,23 @@ typedef vector<ll> vl;
 #define gcd(a, b) __gcd(num1 , num2)
 
 
-string reff = " abcdefghijklmnopqrstuvwxyz";
 
-vector<string> v;
-vector<string> :: iterator it;
-void Recursion_Codes(string str, string res)
+
+
+std::vector<string> v;
+std::vector<string> :: iterator it;
+long long c = 0;
+void Recursion_Subsequence(string str, string ans)
 {
-	if(!str[0])
-	{
-		v.push_back(res);
+	if(!str[0]){
+		v.push_back(ans);
+		c++;
 		return;
 	}
-	Recursion_Codes(str.substr(1), res +reff[int(str[0]-'0')]);
-	if(str.length()>1)
-	{
-		int num = (((str[0]-'0')*10) +(str[1]-'0'));
-		if(num<=26)
-			Recursion_Codes(str.substr(2), res +reff[num]);
-	}
+	Recursion_Subsequence(str.substr(1), ans);
+	Recursion_Subsequence(str.substr(1), ans+str[0]);
 }
+
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -64,12 +62,11 @@ int main()
 
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-
     string str; cin>>str;
-    Recursion_Codes(str, "");
-	cout << '[';
+    Recursion_Subsequence(str, "");
     for(it=v.begin(); it!=v.end()-1; it++)
-    	cout << *it << ", ";
-    cout << *it << ']';
+    	cout << *it << " ";
+    cout << *it<<"\n";
+    cout<<c<<"\n";
     return 0;
 }
