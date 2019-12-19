@@ -1,2 +1,2 @@
- d c cd b bd bc bcd a ad ac acd ab abd abc abcd
-16
+ad ae af bd be bf cd ce cf
+9
