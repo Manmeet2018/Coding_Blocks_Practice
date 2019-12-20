@@ -39,7 +39,7 @@ std::vector<string> v;
 std::vector<string> :: iterator it;
 string reff[] = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wx", "yz"};
 ll c=0LL;
-void RecursionKeyoadCodes(string str, string ans)
+void RecursionKeypadCodes(string str, string ans)
 {
 	if(!str[0])
 	{
@@ -49,7 +49,7 @@ void RecursionKeyoadCodes(string str, string ans)
 	}
 	string curr = reff[str[0]-'1'];
 	for(int i=0; i<curr.length(); i++)
-		RecursionKeyoadCodes(str.substr(1), ans+curr[i]);
+		RecursionKeypadCodes(str.substr(1), ans+curr[i]);
 }
 
 int main()
@@ -63,7 +63,7 @@ int main()
     cin.tie(NULL);
     int n; cin>>n;
     string str = to_string(n);
-    RecursionKeyoadCodes(str, "");
+    RecursionKeypadCodes(str, "");
     for(it=v.begin(); it!=v.end()-1; it++)
     	cout << *it << " ";
     cout << *it<<"\n";
