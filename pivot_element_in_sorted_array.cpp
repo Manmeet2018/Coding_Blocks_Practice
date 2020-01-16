@@ -10,9 +10,9 @@ int Pivotfinder(int arr[], int size)
 	while(start < end)
 	{
 		int mid = (end - start)/2 + start;
-		if(arr[mid] < arr[mid-1])
+		if(mid < end && arr[mid] < arr[mid-1])
 			return mid -1;
-		else if(arr[mid] > arr[mid+1])
+		else if(mid > start && arr[mid] > arr[mid+1])
 			return mid;
 		else if(arr[end] <= arr[mid])
 			start = mid +1;
@@ -24,7 +24,7 @@ int Pivotfinder(int arr[], int size)
 
 
 int main() {
-	int n; cin >> n; 
+	int n; cin >> n;
 	int arr[n];
 	for(int i=0; i<n; i++)
 		cin >> arr[i];
