@@ -36,32 +36,47 @@ typedef vector<ll> vl;
 #define gcd(a, b) __gcd(num1 , num2)
 
 
-std::vector<string> v;
-std::vector<string> :: iterator it;
-void Recursion_Subsequence(string input, string output)
+void helper(string str)
 {
-	if(!inpu  t[0]){
-		v.push_back(output);
-		return;
-	} 
-	Recursion_Subsequence(input.substr(1), output);
-	Recursion_Subsequence(input.substr(1), output+input[0]);
+	int count = 0;
+	int n = str.length();
+	string res = "";
+	for(int i=0; i<n; i++)
+	{
+		count++;
+		if(i==n-1 || str[i+1] != str[i])
+		{
+			res += str[i];
+			string temp = to_string(count);
+			res.append(temp);
+			count = 0;
+		}
+	}
+	int len =res.size();
+	// cout<<len<<"\n";
+	if(len < n)
+		cout<<"YES";
+	else
+		cout<<"NO";
 }
+
 
 int main()
 {
-   	#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-	#endif
+ //   	#ifndef ONLINE_JUDGE
+	// freopen("input.txt", "r", stdin);
+	// freopen("output.txt", "w", stdout);
+	// #endif
 
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    string str; cin>>str;
-    Recursion_Subsequence(str, "");
-    for(it=v.begin(); it!=v.end()-1; it++)
-    	cout << *it << " ";
-    cout << *it<<"\n";
-    cout<<(1<<str.length())<<"\n";
+ //    ios_base::sync_with_stdio(false);
+ //    cin.tie(NULL);
+
+    int t;
+    cin>>t;
+    while(t--){
+        string s; cin>>s;
+        helper(s);
+        cout<<endl;
+        }
     return 0;
 }

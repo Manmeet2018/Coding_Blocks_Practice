@@ -35,19 +35,6 @@ typedef vector<ll> vl;
 #define what_is(x) cerr << #x << "is" << x << endl;
 #define gcd(a, b) __gcd(num1 , num2)
 
-
-std::vector<string> v;
-std::vector<string> :: iterator it;
-void Recursion_Subsequence(string input, string output)
-{
-	if(!inpu  t[0]){
-		v.push_back(output);
-		return;
-	} 
-	Recursion_Subsequence(input.substr(1), output);
-	Recursion_Subsequence(input.substr(1), output+input[0]);
-}
-
 int main()
 {
    	#ifndef ONLINE_JUDGE
@@ -57,11 +44,12 @@ int main()
 
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    string str; cin>>str;
-    Recursion_Subsequence(str, "");
-    for(it=v.begin(); it!=v.end()-1; it++)
-    	cout << *it << " ";
-    cout << *it<<"\n";
-    cout<<(1<<str.length())<<"\n";
+
+    int t;
+    cin>>t;
+    while(t--){
+        ll a,m; cin>>a>>m;
+        
+        }
     return 0;
 }
