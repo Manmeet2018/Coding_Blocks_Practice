@@ -1,3 +1,5 @@
+// https://hack.codingblocks.com/app/contests/1179/p/338
+
 // Created by Manmeet Singh Parmar
 #include <bits/stdc++.h>
 using namespace std;
@@ -71,7 +73,7 @@ int main()
     		{
     			area = arr[top_idx] *(i - index_st.top() - 1);
     		}
-    		// cout << area << endl;
+    		cout << area << endl;
     	}
     	max_area = max(area, max_area);
     }
@@ -85,12 +87,12 @@ int main()
     		{
     			// cout << "1212";
     			area = arr[top_idx] * n;
-    		}l
+    		}
     		else
     		{
     			area = arr[top_idx] *(n - index_st.top() - 1);
     		}
-    		// cout << area << endl;
+    		cout << area << endl;
     		max_area = max(area, max_area);
     }
     cout << max_area << endl;
