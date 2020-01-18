@@ -20,7 +20,7 @@ bool isCBNumber(long long num)
 	return true;
 }
 
-bool isvalid(bitset <30> &visited, int start, int end)
+bool isvalid(bitset <17> &visited, int start, int end)
 {
 	for(int i=start; i<end; i++)
 	{
@@ -36,7 +36,7 @@ bool isvalid(bitset <30> &visited, int start, int end)
 
 void util(string s, int len)
 {
-	bitset<30> visited;
+	bitset<17> visited;
 	int count = 0;
 	for(int l =1; l <= len; l++) // len loop gives the length of substring
 	{
@@ -45,6 +45,7 @@ void util(string s, int len)
 			int end = start + l;
 			string sub = s.substr(start, l);
 			// cout << sub << endl;
+			// cout << visited << endl;
 			if(isCBNumber(stoll(sub)) && isvalid(visited, start, end))
 			{
 				count++;
